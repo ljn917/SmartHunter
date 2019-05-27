@@ -98,6 +98,8 @@ namespace SmartHunter.Game.Data
                 MonsterConfig config = null;
                 if (ConfigHelper.MonsterData.Values.Monsters.TryGetValue(Id, out config) && config.Crowns != null)
                 {
+                    SmartHunter.Core.Log.WriteLine("Monster.cs: Id=" + Id + ", name=" + Name + ", mini=" + config.Crowns.Mini.ToString("G3") + ", silver=" + config.Crowns.Silver.ToString("G3") + ", gold=" + config.Crowns.Gold.ToString("G3"));
+                    SmartHunter.Core.Log.WriteLine("Monster.cs: Id=" + Id + ", name=" + Name + ", modifiedSizeScale=" + ModifiedSizeScale.ToString("G12") + " (m_SizeScale=" + m_SizeScale.ToString("G12")+")");
                     int modifiedSizeScale = (int)Math.Round(ModifiedSizeScale * 100, 0);
 
                     if (modifiedSizeScale <= (int)Math.Round(config.Crowns.Mini * 100, 0))
